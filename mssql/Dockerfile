@@ -1,21 +1,16 @@
-FROM mcr.microsoft.com/mssql/server:2022-latest
+#FROM datagrip/datagrip/mssql-server-linux
+FROM mcr.microsoft.com/mssql/server:latest-stable
 
-RUN groupadd -r alphine_cow && useradd -r -g alphine_cow alphine_cow
+RUN mkdir -p /usr/database
 
-RUN apt-get update -yqq && \
-    apt-get install -yqq \
-    git \
-    curl \
-    zip \
-    unzip \
-    gzip \
-    libzip-dev \
-    libicu-dev \
-    nano
+WORKDIR /usr/database
 
-# Make sure folder exists
-RUN mkdir /usr/local/backups
+RUN mkdir -p /usr/entrypoint
 
-COPY ./backups/* /usr/local/backups/
+COPY ./backups /usr/database/
 
-RUN chown alphine_cow:alphine_cow /usr/local/backups -R
+COPY . /usr/entrypoint
+
+RUN chmod +rw /usr/database
+RUN chmod +x /usr/entrypoint/entrypoint.sh
+RUN chmod +x /usr/entrypoint/configure-db.sh

@@ -10,8 +10,7 @@ services:
     ports:
       - '1433:1433'
     volumes:
-      - db:/var/opt/mssql
+      - db_data:/var/opt/mssql
       - ./backups/:/opt/mssql-tools/bin/
 volumes:
-  db:
-    driver: local
+  db_data:
