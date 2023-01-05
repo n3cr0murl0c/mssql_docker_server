@@ -1,16 +1,5 @@
 #!/bin/bash
 
-# Start the script to create the DB and user
-/usr/config/configure-db.sh &
-
-# Start SQL Server
-/opt/mssql/bin/sqlservr
-
-
-
-
-#!/bin/bash
-
 # wait for database to start...
 echo "$0: SQL Server startup in progress"
 until /opt/mssql-tools/bin/sqlcmd -U SA -P ${MSSQL_SA_PASSWORD} -Q 'SELECT 1;' &> /dev/null; do
