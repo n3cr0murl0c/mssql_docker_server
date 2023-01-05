@@ -11,6 +11,6 @@ services:
       - '1433:1433'
     volumes:
       - db_data:/var/opt/mssql
-      - ./backups/:/opt/mssql-tools/bin/
+      - ./backups/:/docker-entrypoint-initdb.d/
 volumes:
   db_data:
