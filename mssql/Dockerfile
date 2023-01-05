@@ -5,7 +5,7 @@ RUN mkdir -p /usr/databases
 
 WORKDIR /usr/databases
 
-COPY entrypoint.sh /usr/local/bin/
+COPY entrypoint.sh /home/
+RUN chmod +x /home/entrypoint.sh
 
-
-# ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
