@@ -8,9 +8,7 @@ RUN mkdir -p /usr/databases
 
 WORKDIR /usr/databases
 
-COPY entrypoint.sh /home/
-RUN chmod +x /home/entrypoint.sh
+COPY entrypoint.sh /bin/
 
-ENV PATH=$PATH:/home/entrypoint.sh
 
 ENTRYPOINT ["entrypoint.sh"]

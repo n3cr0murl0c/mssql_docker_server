@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   mssql:
-    image: datagrip/datagrip/mssql-server-linux
+    build: ./mssql/
     container_name: mssql
     restart: always
     env_file:
