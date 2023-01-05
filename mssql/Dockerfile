@@ -8,4 +8,4 @@ WORKDIR /usr/databases
 COPY entrypoint.sh /usr/local/bin/
 
 
-ENTRYPOINT ["entrypoint.sh"]
+# ENTRYPOINT ["entrypoint.sh"]
