@@ -4,9 +4,7 @@ FROM mcr.microsoft.com/mssql/server
 RUN mkdir -p /usr/databases
 
 WORKDIR /usr/databases
-RUN echo $PATH
-#ENV PATH $PATH:/opt/mssql-tools/bin
-ENV PATH=$PATH:/opt/mssql-tools/bin/
+
 COPY entrypoint.sh /usr/local/bin/
 COPY entrypoint-initdb.sh /usr/local/bin/
 

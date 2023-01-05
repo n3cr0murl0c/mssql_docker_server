@@ -13,7 +13,7 @@
 
 # wait for database to start...
 echo "$0: SQL Server startup in progress"
-until sqlcmd -U SA -P ${MSSQL_SA_PASSWORD} -Q 'SELECT 1;' &> /dev/null; do
+until /opt/mssql-tools/bin/sqlcmd -U SA -P ${MSSQL_SA_PASSWORD} -Q 'SELECT 1;' &> /dev/null; do
   echo -n "."
   sleep 1
 done
