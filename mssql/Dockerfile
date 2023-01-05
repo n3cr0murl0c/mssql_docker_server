@@ -6,6 +6,6 @@ RUN mkdir -p /usr/databases
 WORKDIR /usr/databases
 
 COPY entrypoint.sh /usr/local/bin/
-COPY entrypoint-initdb.sh /usr/local/bin/
+
 
 ENTRYPOINT ["entrypoint.sh"]
