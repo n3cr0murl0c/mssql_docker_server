@@ -1,5 +1,5 @@
 #FROM datagrip/datagrip/mssql-server-linux
-FROM mcr.microsoft.com/mssql/server:latest-stable
+FROM mcr.microsoft.com/mssql/server
 
 RUN mkdir -p /usr/database
 
