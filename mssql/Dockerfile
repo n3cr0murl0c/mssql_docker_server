@@ -1,19 +1,9 @@
 #FROM datagrip/datagrip/mssql-server-linux
 FROM mcr.microsoft.com/mssql/server
 
-RUN mkdir -p /usr/database
+RUN mkdir -p /usr/databases
 
-WORKDIR /usr/database
-
-RUN mkdir -p /usr/entrypoint
-
-COPY ./backups /usr/database/
-
-COPY . /usr/entrypoint
-
-RUN chmod +rw /usr/database
-RUN chmod +x /usr/entrypoint/entrypoint.sh
-RUN chmod +x /usr/entrypoint/configure-db.sh
+WORKDIR /usr/databases
 
 ENV PATH $PATH:/opt/mssql-tools/bin
 
