@@ -4,9 +4,8 @@ services:
     build: ./mssql/
     container_name: mssql
     restart: always
-    environment:
-      - ACCEPT_EULA=Y
-      - MSSQL_SA_PASSWORD=Secret1234
+    env_file:
+      - .env_prod
     ports:
       - '1433:1433'
     volumes:
