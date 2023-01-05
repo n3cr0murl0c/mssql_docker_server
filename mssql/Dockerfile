@@ -11,4 +11,4 @@ WORKDIR /usr/databases
 COPY entrypoint.sh /bin/
 
 
-ENTRYPOINT ["entrypoint.sh"]
+# ENTRYPOINT ["entrypoint.sh"]
