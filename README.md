@@ -1,2 +1,2 @@
-# mysql_docker_server
-Server SQL dockerizado para ser usado en VLAN PALMEDICAL
+# Microsoft MSSQL Server Docker deployment
+Server Microsoft SQL dockerizado para ser usado en producción sobre contendores/swarm
