@@ -2,7 +2,7 @@ version: '3.8'
 services:
   mssql:
     build: ./mssql/
-    container_name: mssql
+    container_name: mssql-sivera-Db
     restart: always
     env_file:
       - .env_prod
@@ -10,6 +10,6 @@ services:
       - '1433:1433'
     volumes:
       - db_data:/var/opt/mssql
-      - ./backups/:/docker-entrypoint-initdb.d/
+      - ./mssql/backups/:/docker-entrypoint-initdb.d/
 volumes:
   db_data:
