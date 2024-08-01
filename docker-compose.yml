@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 services:
   mssql:
     build: ./mssql/
@@ -7,9 +7,21 @@ services:
     env_file:
       - .env_prod
     ports:
-      - '1433:1433'
+      - "1433:1433"
     volumes:
-      - db_data:/var/opt/mssql
+      - ./mssql_db_data:/var/opt/mssql
       - ./mssql/backups/:/docker-entrypoint-initdb.d/
-volumes:
-  db_data:
+    networks:
+      proxy:
+        ipv4_address: 192.168.1.55
+# volumes:
+#   db_data:
+#     driver: local
+#     driver_opts:
+#       type: 'one'
+#       o: 'bind'
+#       device: /media/n3cr0murl0c/
+
+networks:
+  proxy:
+    external: true
