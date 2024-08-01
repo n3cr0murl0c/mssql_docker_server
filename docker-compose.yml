@@ -1,4 +1,3 @@
-version: "3.8"
 services:
   mssql:
     build: ./mssql/
@@ -9,18 +8,18 @@ services:
     ports:
       - "1433:1433"
     volumes:
-      - ./mssql_db_data:/var/opt/mssql
+      - db_data:/var/opt/mssql
       - ./mssql/backups/:/docker-entrypoint-initdb.d/
     networks:
       proxy:
         ipv4_address: 192.168.1.55
-# volumes:
-#   db_data:
-#     driver: local
-#     driver_opts:
-#       type: 'one'
-#       o: 'bind'
-#       device: /media/n3cr0murl0c/
+volumes:
+  db_data:
+    driver: local
+    driver_opts:
+      type: "one"
+      o: "bind"
+      device: /home/n3cr0murl0c/mssqlTest
 
 networks:
   proxy:
