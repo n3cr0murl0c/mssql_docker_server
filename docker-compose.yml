@@ -19,7 +19,7 @@ volumes:
     driver_opts:
       type: "one"
       o: "bind"
-      device: /home/n3cr0murl0c/mssqlTest
+      device: /home/{USER}/mssqlTest
 
 networks:
   proxy:
